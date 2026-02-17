@@ -86,3 +86,8 @@ equation1 = (5 * 2)
 equation2 = (10 / 2)
 if equation1 > 9 and equation2 == 5:
     print(f"{equation1} > 9 and {equation2} == 5")
+#21
+truth = True
+lie = False
+both = truth + lie
+print(f"{both}")
