@@ -19,7 +19,7 @@ print(f"{a} % {b}")
 #6
 radius = 4.5
 pi = 3.14159
-area = 2 * radius * pi
+area = (radius ** 2) * pi
 print(f"{area}")
 #7
 withoutparenth = 3 + 4 * 2
@@ -91,3 +91,37 @@ truth = True
 lie = False
 both = truth + lie
 print(f"{both}")
+#That number appears because of the boolean values of True and False are 1 and 0 in binary, and 1 + 0 is 1
+#22
+price = 19.999
+add = 0.001
+total = price + add
+sentence =f"The Total is ${total}0"
+print(f"{sentence}")
+#23
+name = "Marcus"
+apples = 4
+oranges = 6
+total_fruit = apples + oranges
+fruit_sentence = f"{name} had {total_fruit} pieces of fruit."
+print(f"{fruit_sentence}")
+#24
+age = 20
+citizen = True
+registered = False
+if age >= 18 and citizen == True and registered == True:
+    print("This person can vote.")
+else:
+        print("This person cannot vote.")
+#25
+length = 10
+width = 15
+cost_per_square_unit = 5
+Area = length * width
+cost_per_unit = cost_per_square_unit
+total_cost = Area * cost_per_unit
+print(f"Length: {length}\nWidth: {width}\nArea: {Area}\nCost per unit: {cost_per_unit}\nTotal cost: {total_cost}")
+if total_cost > 500:
+    print("Price is over $500")
+else:
+    print("Price is not over $500")
