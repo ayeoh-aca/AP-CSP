@@ -125,3 +125,6 @@ if total_cost > 500:
     print("Price is over $500")
 else:
     print("Price is not over $500")
+#Interesting
+t = "17"
+print(t + "1")
