@@ -1,5 +1,5 @@
 #1.
-balance = 0
+"""balance = 0
 while balance < 150:
     amount = int(input("Insert coins (in cents): "))
     balance = amount + balance
@@ -80,3 +80,33 @@ if haveall == 3:
     print("You can make scrambled eggs!")
 else:
     print("You are missing ingredients.")
+#6.
+prices = []
+value = 0
+total = 0
+tip_amount = 0
+while value != -1:
+    value = float(input("Enter a meal price (or -1 to finish): "))
+    if value != -1:
+        prices.append(value)
+for price in range(len(prices)):
+    total = total + prices[price]
+print(f"Table total: ${total:.2f}")
+tip_rates = [0.10, 0.15, 0.18, 0.20]
+for tip in range(len(tip_rates)):
+    tip_amount = total * tip_rates[tip]
+    final_total = total + tip_amount
+    print(f"{tip_rates[tip]*100:.2f}% tip: ${tip_amount:.2f} tip ---> ${final_total:.2f} total")
+#7."""
+steps = []
+day = 1
+while len(steps) != 7:
+    track = int(input(f"Enter steps for day {day}: "))
+    if len(steps) != 7:
+        steps.append(track)
+greater = 0
+for step in range(len(steps)):
+    if steps[step] > greater:
+        steps
+
+
