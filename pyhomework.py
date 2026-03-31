@@ -99,14 +99,17 @@ for tip in range(len(tip_rates)):
     print(f"{tip_rates[tip]*100:.2f}% tip: ${tip_amount:.2f} tip ---> ${final_total:.2f} total")
 #7."""
 steps = []
-day = 1
 while len(steps) != 7:
+    day = len(steps) + 1
     track = int(input(f"Enter steps for day {day}: "))
     if len(steps) != 7:
         steps.append(track)
-greater = 0
-for step in range(len(steps)):
-    if steps[step] > greater:
-        steps
-
-
+best = max(steps)
+for term in steps:
+    day = steps.index(steps[term]) + 1
+    print(f"Day {day}: {steps[term]} steps")
+    if steps[term] >= 10000:
+        print("Goal met!")
+    if steps[term] < 10000:
+        print(f"{10000-steps[term]} steps short")
+print(f"Best day: Day X with {best} steps.")
