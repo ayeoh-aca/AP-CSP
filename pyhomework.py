@@ -1,5 +1,5 @@
 #1.
-"""balance = 0
+balance = 0
 while balance < 150:
     amount = int(input("Insert coins (in cents): "))
     balance = amount + balance
@@ -97,19 +97,80 @@ for tip in range(len(tip_rates)):
     tip_amount = total * tip_rates[tip]
     final_total = total + tip_amount
     print(f"{tip_rates[tip]*100:.2f}% tip: ${tip_amount:.2f} tip ---> ${final_total:.2f} total")
-#7."""
+#7.
 steps = []
-while len(steps) != 7:
+while len(steps) < 7:
     day = len(steps) + 1
     track = int(input(f"Enter steps for day {day}: "))
-    if len(steps) != 7:
+    if len(steps) < 7:
         steps.append(track)
-best = max(steps)
-for term in steps:
-    day = steps.index(steps[term]) + 1
-    print(f"Day {day}: {steps[term]} steps")
+best = steps[0]
+best_index = 0
+for i in range(len(steps)):
+    if steps[i] > best:
+        best = steps[i]
+        best_index = i
+    
+for term in range(7):
+    print(f"Day {day+1}: {steps[term]} steps")
     if steps[term] >= 10000:
         print("Goal met!")
-    if steps[term] < 10000:
+    else:
         print(f"{10000-steps[term]} steps short")
-print(f"Best day: Day X with {best} steps.")
+print(f"Best day: Day {best_index+1} with {best} steps.")
+#8.
+movies = ["Inception", "Clueless", "Parasite", "Get Out"]
+votes = [0, 0, 0, 0]
+answer = 1
+for i in range(4):
+    print(f"{i+1}. {movies[i]}")
+while answer != 0:
+    answer = int(input("Enter a number 1-4 to vote, or 0 to close voting: "))
+    if 1 <= answer <= 4:
+        votes[answer - 1] += 1
+    else:
+        print("Invalid choice")
+for i in range(4):
+    print(f"{movies[i]}: {votes[i]} votes")
+highest = votes[0]
+for i in range(4):
+    if votes[i] > highest:
+        highest = i
+count = 0
+win = 0
+for i in range(4):
+    if votes[i] == highest:
+        count += 1
+        win = i
+if count == 1:
+    print(f"Winner: {movies[win]}!")
+else:
+    print("It's a tie.")
+#9.
+budget = float(input("What is your total budget? $"))
+limit = float(input("What is your per-item spending limit? $"))
+names = []
+costs = []
+name = ""
+cost = 0
+while name != "done":
+    name = input("Item name (or done to finish): ")
+    if name == "done":
+        break
+    else:
+        cost = float(input("Cost of that item: $"))
+    names.append(name)
+    costs.append(cost)
+total = 0
+for i in range(len(costs)):
+    total = total + costs[i]
+for i in range(len(names)):
+    print(f"{names[i]} costs {costs[i]:.2f}")
+    if costs[i] > limit:
+        print("This item exceeded your per-item limit.")
+for i in range(len(names)):
+    print(f"{i+1}. {names[i]} - ${costs[i]:.2f} ({(costs[i]/total)*100:.1f}% of total)")
+if total > budget:
+    print(f"Over budget by ${total-budget:.2f}")
+else:
+    print(f"Under budget. ${budget-total:.2f} remaining.")
